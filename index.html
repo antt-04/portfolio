@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Escritorio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="desktop">
+    <!-- Fondo -->
+    <div class="background"></div>
+
+    <!-- Iconos grandes -->
+    <div class="icon draggable" id="cv-icon">
+      <img src="assets/folder_cv.png" alt="CV" />
+      <span id="cv-text">Mi CV</span>
+    </div>
+
+    <div class="icon draggable" id="projects-icon">
+      <img src="assets/folder_proyects.png" alt="Proyectos" />
+      <span id="projects-text">Mis Proyectos</span>
+    </div>
+
+    <!-- Widgets translúcidos -->
+    <div class="widget clock-widget draggable">
+      <div class="date" id="date-display"></div>
+      <div class="time-container">
+        <div class="time" id="time-display"></div>
+      </div>
+    </div>
+
+    <div class="widget weather-widget draggable">
+      <div class="weather-icon" id="weather-icon"><i class="fas fa-sun"></i></div>
+      <div class="weather-info">
+        <div class="temperature" id="temperature"></div>
+        <div class="weather-details">
+          <div id="weather-description"></div>
+          <div id="humidity"></div>
+        </div>
+      </div>
+      <div class="location">
+        <i class="fas fa-location-dot"></i>
+        <span id="location-text"></span>
+      </div>
+    </div>
+
+    <!-- Barra de tareas -->
+    <div class="taskbar">
+      <div class="taskbar-content">
+        <div class="language-selector">
+          <select id="language-select">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+          </select>
+        </div>
+        <div class="taskbar-controls">
+          <div class="volume-control">
+            <button id="volume-toggle" class="volume-button">
+              <i class="fas fa-volume-up"></i>
+            </button>
+            <div class="volume-slider-container" id="volume-slider-container">
+              <input type="range" min="0" max="100" value="100" class="volume-slider" id="volume-slider">
+            </div>
+          </div>
+          <div class="taskbar-clock" id="taskbar-clock"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

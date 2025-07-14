@@ -1,0 +1,468 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  height: 100vh;
+  /* overflow: hidden; */
+  background: #f0f4f8;
+}
+
+.desktop {
+  position: relative;
+  min-height: 100vh;
+  /* overflow: hidden; */
+}
+
+/* Fondo */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/background.JPG') center/cover no-repeat;
+  z-index: -1;
+  filter: brightness(0.95);
+}
+
+/* Iconos grandes */
+.icon {
+  width: 280px; 
+  text-align: center;
+  user-select: none;
+  transition: all 0.3s;
+  cursor: grab;
+  position: absolute;
+  background: none !important;
+  backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  z-index: 5;
+}
+
+/* Posiciones iniciales */
+#cv-icon {
+  top: 100px;
+  left: 80px;
+}
+
+#projects-icon {
+  top: 100px;
+  left: 400px;
+}
+
+.icon img {
+  width: 200px; 
+  height: 200px; 
+  display: block;
+  margin: 0 auto 15px;
+  transition: transform 0.3s;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.icon:hover img {
+  transform: scale(1.05);
+}
+
+.icon span {
+  display: block;
+  text-align: center;
+  color: #2d3748;
+  font-size: 26px; 
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Widgets más translúcidos y a la izquierda */
+.widget {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: absolute;
+  cursor: grab;
+  z-index: 5;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Contenedor del reloj */
+.clock-widget {
+  top: 100px;
+  right: 200px;
+  width: 500px;
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* MODIFICACIÓN: Clima más a la izquierda */
+.weather-widget {
+  top: 380px; 
+  right: 300px;  /* Cambiado de 220px a 300px (más a la izquierda) */
+  width: 500px;
+}
+
+.widget:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.clock-widget {
+  text-align: center;
+}
+
+.date {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #4a5568;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+}
+
+/* Nuevo contenedor para el tiempo - centrado */
+.time-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Reloj con tamaño reducido y centrado */
+.time {
+  font-size: 4.5rem;
+  font-weight: 300;
+  letter-spacing: 5px; 
+  font-family: 'Courier New', monospace;
+  color: #2d3748;
+  padding: 15px 40px;
+  border-radius: 15px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  min-width: 380px;
+  box-sizing: border-box;
+}
+
+.weather-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.temperature {
+  font-size: 4rem;
+  font-weight: 300;
+  color: #2d3748;
+}
+
+.weather-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 1.3rem;
+  color: #4a5568;
+}
+
+.weather-icon {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  color: #f6ad55;
+}
+
+.weather-icon img {
+  width: 90px;
+  height: 90px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 1.3rem;
+  color: #4a5568;
+}
+
+/* Barra de tareas */
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  z-index: 10000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.taskbar-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.taskbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.volume-button {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #2d3748;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.volume-button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.volume-slider-container {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 10001;
+  width: 120px;
+}
+
+.volume-slider {
+  width: 100%;
+  height: 20px;
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2d3748;
+  cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #2d3748;
+  cursor: pointer;
+  border: none;
+}
+
+.taskbar-clock {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #2d3748;
+  padding: 5px 15px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.language-selector select {
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  padding: 5px 10px;
+  color: #2d3748;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 1600px) {
+  .clock-widget {
+    right: 150px;
+  }
+  
+  .weather-widget {
+    right: 250px; /* Cambiado de 170px a 250px */
+  }
+}
+
+@media (max-width: 1400px) {
+  .clock-widget {
+    width: 450px;
+    right: 100px;
+  }
+  
+  .weather-widget {
+    width: 450px;
+    right: 200px; /* Cambiado de 120px a 200px */
+  }
+  
+  .time {
+    font-size: 4rem;
+    min-width: 340px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .clock-widget, .weather-widget {
+    width: 400px;
+  }
+  
+  .clock-widget {
+    right: 70px;
+  }
+  
+  .weather-widget {
+    right: 170px; /* Cambiado de 90px a 170px */
+  }
+  
+  .time {
+    font-size: 3.8rem;
+    min-width: 320px;
+  }
+  
+  .temperature {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .icon {
+    width: 260px;
+  }
+  
+  .icon img {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .clock-widget, .weather-widget {
+    width: 380px;
+    padding: 25px;
+  }
+  
+  .clock-widget {
+    right: 40px;
+  }
+  
+  .weather-widget {
+    right: 140px; /* Cambiado de 60px a 140px */
+  }
+  
+  .time {
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    padding: 15px 30px;
+    min-width: 300px;
+  }
+  
+  .date {
+    font-size: 1.5rem;
+  }
+  
+  .temperature {
+    font-size: 3rem;
+  }
+  
+  .weather-icon {
+    font-size: 3rem;
+  }
+  
+  .weather-icon img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+  
+  .icon {
+    position: static;
+    margin-bottom: 40px;
+  }
+  
+  .widget {
+    position: static;
+    margin-bottom: 40px;
+    width: 90% !important;
+    max-width: 500px;
+    right: auto !important;
+  }
+  
+  #cv-icon, #projects-icon {
+    position: static;
+    margin: 20px 0;
+  }
+  
+  .time {
+    min-width: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .taskbar {
+    padding: 0 10px;
+  }
+
+  .taskbar-clock {
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
+
+  .language-selector select {
+    padding: 5px 8px;
+    font-size: 0.9rem;
+  }
+  
+  .volume-slider-container {
+    left: -40px;
+    transform: none;
+  }
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Andrea García</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="cv-styles.css">
+</head>
+<body>
+  <!-- Selector de idiomas flotante superior -->
+  <div class="language-selector-top">
+    <select id="cv-language-select">
+      <option value="es">ES</option>
+      <option value="en">EN</option>
+    </select>
+  </div>
+
+  <div class="desktop">
+    <div class="background"></div>
+    
+    <div class="cv-wrapper">
+      <header class="cv-header">
+        <h1>ANDREA GARCÍA ALONSO</h1>
+        <h2 id="cv-title">Desarrolladora Web Fullstack</h2>
+      </header>
+      
+      <main class="cv-main">
+        <div class="cv-columns">
+          <div class="cv-left-column">
+            <section class="cv-section about">
+              <h3><i class="fas fa-user"></i> <span class="translatable" data-key="about">SOBRE MÍ</span></h3>
+              <p class="translatable" data-key="aboutText">Desarrolladora web en formación con enfoque en desarrollo fullstack, destacando por la capacidad de adaptación, resolución de problemas y pasión por la tecnología. He colaborado en proyectos reales con impacto social, como la plataforma de ayuda al diagnóstico de enfermedades raras (UOC + Hospital Sant Joan de Déu).</p>
+            </section>
+            
+            <section class="cv-section">
+              <h3><i class="fas fa-briefcase"></i> <span class="translatable" data-key="experience">EXPERIENCIA</span></h3>
+              <div class="cv-item">
+                <h4 class="translatable" data-key="job1Title">Operaría de rampa</h4>
+                <p class="cv-place">Groundforce, Aeropuerto El Prat | 2021-2023</p>
+                <p class="cv-desc translatable" data-key="job1Desc">Carga y descarga de mercancías y equipaje de aviones. Mantenimiento del equipo.</p>
+              </div>
+              <div class="cv-item">
+                <h4 class="translatable" data-key="job2Title">Prácticas Desarrollo Web</h4>
+                <p class="cv-place">Universitat Oberta de Catalunya | 2022</p>
+                <p class="cv-desc translatable" data-key="job2Desc">Diseño frontend en HTML, JavaScript y CSS para proyecto de ayuda ciudadana.</p>
+              </div>
+              <div class="cv-item">
+                <h4 class="translatable" data-key="job3Title">Gestora de llamadas de emergencia - TI2</h4>
+                <p class="cv-place">Serveo, L'Hospitalet de Llobregat</p>
+              </div>
+              <div class="cv-item">
+                <h4 class="translatable" data-key="job4Title">Mozo de almacén</h4>
+                <p class="cv-place">Fedefarma, Gavà</p>
+              </div>
+            </section>
+          </div>
+          
+          <div class="cv-right-column">
+            <section class="cv-section">
+              <h3><i class="fas fa-graduation-cap"></i> <span class="translatable" data-key="education">FORMACIÓN</span></h3>
+              <div class="cv-item">
+                <h4 class="translatable" data-key="edu1Title">Máster FP en Inteligencia Artificial y Big Data</h4>
+                <p class="cv-place">IFP, L'Hospitalet de Llobregat</p>
+                <p class="cv-date translatable" data-key="edu1Date">Fecha de finalización: En curso</p>
+              </div>
+              <div class="cv-item">
+                <h4 class="translatable" data-key="edu2Title">CFGS Desarrollo de Aplicaciones Web (Bioinformática)</h4>
+                <p class="cv-place">Institut Provençana, L'Hospitalet de Llobregat</p>
+                <p class="cv-date">Junio 2022 - Diciembre 2022</p>
+                <p class="cv-desc translatable" data-key="edu2Desc">Proyecto colaborativo con Hospital Sant Joan de Déu. Desarrollo de plataforma digital para diagnóstico de enfermedades raras.</p>
+                <div class="skills">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JavaScript</span>
+                  <span>Python</span>
+                  <span>React</span>
+                  <span>MySQL</span>
+                  <span>PHP</span>
+                  <span>PL/SQL</span>
+                  <span>TypeScript</span>
+                </div>
+              </div>
+            </section>
+            
+            <section class="cv-section">
+              <h3><i class="fas fa-certificate"></i> <span class="translatable" data-key="courses">CURSOS</span></h3>
+              <div class="cv-item">
+                <h4 class="translatable" data-key="course1Title">Inteligencia Artificial y productividad</h4>
+                <p class="cv-place">Google - Becas Santander | 2024</p>
+                <p class="cv-date translatable" data-key="course1Hours">8 horas</p>
+              </div>
+              <div class="cv-item">
+                <h4 class="translatable" data-key="course2Title">Desarrollo de aplicaciones multiplataforma</h4>
+                <p class="cv-place">Pau Casals | 2022</p>
+                <p class="cv-date translatable" data-key="course2Hours">690 horas</p>
+              </div>
+            </section>
+            
+            <section class="cv-section languages-section">
+              <h3><i class="fas fa-language"></i> <span class="translatable" data-key="languages">IDIOMAS</span></h3>
+              <div class="languages">
+                <div class="language">
+                  <span class="translatable" data-key="lang1">Castellano</span>
+                  <div class="level native translatable" data-key="lang1Level">Nativo</div>
+                </div>
+                <div class="language">
+                  <span class="translatable" data-key="lang2">Catalán</span>
+                  <div class="level c1">C1</div>
+                </div>
+                <div class="language">
+                  <span class="translatable" data-key="lang3">Inglés</span>
+                  <div class="level b2">B2</div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../script.js"></script>
+  <script src="cv-script.js"></script>
+</body>
+</html>

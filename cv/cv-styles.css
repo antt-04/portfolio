@@ -1,0 +1,265 @@
+/* Estilos base */
+.cv-wrapper {
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-y: visible;
+  min-height: calc(100vh - 100px);
+  padding-bottom: 50px;
+}
+
+/* Fondo */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/background.JPG');
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  filter: brightness(0.9);
+  pointer-events: none;
+}
+
+/* Selector de idiomas superior */
+.language-selector-top {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.language-selector-top:hover {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+}
+
+.language-selector-top select {
+  background: transparent;
+  border: 1px solid rgba(74, 85, 104, 0.3);
+  border-radius: 5px;
+  padding: 5px 8px;
+  color: #2d3748;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.language-selector-top select:focus {
+  border-color: #4299e1;
+}
+
+/* Cabecera */
+.cv-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-top: 60px; /* Espacio para el selector */
+}
+
+.cv-header h1 {
+  font-size: 2.2rem;
+  color: #2d3748;
+  margin-bottom: 5px;
+}
+
+.cv-header h2 {
+  font-size: 1.3rem;
+  color: #4a5568;
+  font-weight: 400;
+}
+
+/* Columnas */
+.cv-columns {
+  display: flex;
+  gap: 20px;
+}
+
+.cv-left-column {
+  flex: 1;
+}
+
+.cv-right-column {
+  flex: 1;
+}
+
+/* Secciones */
+.cv-section {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.cv-section h3 {
+  color: #2d3748;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cv-section h3 i {
+  color: #4a5568;
+}
+
+/* Items */
+.cv-item {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+}
+
+.cv-item:last-child {
+  border-bottom: none;
+}
+
+.cv-item h4 {
+  color: #2d3748;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.cv-place {
+  color: #4a5568;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.cv-date {
+  color: #718096;
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.cv-desc {
+  color: #4a5568;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+/* Habilidades */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.skills span {
+  background: rgba(66, 153, 225, 0.2);
+  color: #2b6cb0;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+}
+
+/* Sección de Idiomas */
+.languages-section {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.languages {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.language {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.language span {
+  color: #4a5568;
+  font-size: 0.95rem;
+}
+
+.level {
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.level.native {
+  background: rgba(72, 187, 120, 0.2);
+  color: #2f855a;
+  border-left: 4px solid #2f855a;
+}
+
+.level.c1 {
+  background: rgba(49, 151, 149, 0.2);
+  color: #2c7a7b;
+  border-left: 4px solid #2c7a7b;
+}
+
+.level.b2 {
+  background: rgba(237, 137, 54, 0.2);
+  color: #c05621;
+  border-left: 4px solid #c05621;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cv-columns {
+    flex-direction: column;
+  }
+  
+  .cv-wrapper {
+    width: 95%;
+    padding: 10px;
+  }
+  
+  .cv-header {
+    padding: 15px;
+    margin-top: 50px;
+  }
+  
+  .cv-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .cv-section {
+    padding: 20px;
+  }
+
+  .language {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .level {
+    align-self: flex-end;
+  }
+
+  .language-selector-top {
+    top: 10px;
+    right: 10px;
+    padding: 5px 8px;
+  }
+}
