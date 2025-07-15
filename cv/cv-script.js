@@ -13,6 +13,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 100);
   });
 
+  // Animación para la flecha de volver
+  const backArrow = document.querySelector('.back-arrow');
+  if (backArrow) {
+    backArrow.style.opacity = '0';
+    backArrow.style.transform = 'translateX(-20px)';
+    backArrow.style.transition = 'all 0.5s ease 0.2s';
+    
+    setTimeout(() => {
+      backArrow.style.opacity = '1';
+      backArrow.style.transform = 'translateX(0)';
+    }, 200);
+    
+    // Efecto de sonido al hacer clic
+    backArrow.addEventListener('click', function(e) {
+      e.preventDefault();
+      playClickSound();
+      setTimeout(() => {
+        window.location.href = this.querySelector('a').getAttribute('href');
+      }, 200);
+    });
+  }
+
   // Forzar recarga del fondo si es necesario
   const bg = document.querySelector('.background');
   if (bg) {
